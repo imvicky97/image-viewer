@@ -110,7 +110,6 @@ class Home extends Component{
   }
 
   onSearchEntered = (value) =>{
-    console.log('search value', value);
     let filteredData = this.state.data;
     filteredData = filteredData.filter((data) =>{
       let string = data.caption.text.toLowerCase();
@@ -123,7 +122,6 @@ class Home extends Component{
   }
 
   likeClickHandler = (id) =>{
-    console.log('like id',id);
     var foundItem = this.state.data.find((item) => {
       return item.id === id;
     })
