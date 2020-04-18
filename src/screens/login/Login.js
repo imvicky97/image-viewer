@@ -47,7 +47,7 @@ class Login extends Component {
         if (this.state.username === "" || this.state.password === "") { return }
 
         if (this.state.username === "admin" && this.state.password === "password") {
-            sessionStorage.setItem('username','admin');
+            sessionStorage.setItem('username', 'admin');
             sessionStorage.setItem('access-token', '8661035776.d0fcd39.39f63ab2f88d4f9c92b0862729ee2784');
             this.setState({ loggedIn: true });
             this.navigateToHome();
@@ -56,8 +56,8 @@ class Login extends Component {
         }
     }
 
-    navigateToHome = () =>{
-      this.props.history.push('/home');
+    navigateToHome = () => {
+        this.props.history.push('/home');
     }
 
     inputUsernameChangeHandler = (e) => {
@@ -72,16 +72,16 @@ class Login extends Component {
         return (
             <div className="main-container">
                 <Header
-                  screen={"Login"}/>
+                    screen={"Login"} />
                 <Card style={styles.card}>
                     <CardContent>
                         <Typography style={styles.title}> LOGIN </Typography><br />
-                        <FormControl required style={{width: '100%'}}>
+                        <FormControl required style={{ width: '100%' }}>
                             <InputLabel htmlFor="username"> Username </InputLabel>
                             <Input id="username" type="text" username={this.state.username} onChange={this.inputUsernameChangeHandler} />
                             <FormHelperText className={this.state.usernameRequired}><span className="red">required</span></FormHelperText>
                         </FormControl><br /><br />
-                        <FormControl required style={{width: '100%'}}>
+                        <FormControl required style={{ width: '100%' }}>
                             <InputLabel htmlFor="password"> Password </InputLabel>
                             <Input id="password" type="password" onChange={this.inputPasswordChangeHandler} />
                             <FormHelperText className={this.state.passwordRequired}><span className="red">required</span></FormHelperText>
